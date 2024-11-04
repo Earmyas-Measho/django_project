@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contract List</title>
+</head>
+<body>
+    <h1>Contract List</h1>
+    <ul>
+        {% for contract in contracts %}
+            <li>
+                Contract ID: {{ contract.id }} <br>
+                Item: {{ contract.item.name }} <br>
+                Borrower: {{ contract.borrower.name }} <br>
+                Start Date: {{ contract.start_date }} <br>
+                End Date: {{ contract.end_date }} <br>
+                Active: {{ contract.active }}
+            </li>
+        {% empty %}
+            <p>No contracts found.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>

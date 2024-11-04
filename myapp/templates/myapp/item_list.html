@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Item List</title>
+</head>
+<body>
+    <h1>Item List</h1>
+    <ul>
+        {% for item in items %}
+            <li>
+                Name: {{ item.name }} - Cost: {{ item.cost }} - Owner:
+                {% if item.owner %}{{ item.owner.name }}{% else %}No Owner{% endif %}
+            </li>
+        {% empty %}
+            <p>No items found.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>
